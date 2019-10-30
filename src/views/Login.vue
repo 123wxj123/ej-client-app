@@ -1,9 +1,8 @@
 <template>
   <div class="login">
     <div class="header">
-      <div class="logo">jz</div>
-      <div class="title">
-        家政服务平台-顾客端
+      <div class="logo"></div>
+      <div class="title"><strong>家政服务平台</strong>
       </div>
     </div>
     <div class="form">
@@ -56,22 +55,25 @@ export default {
 </script>
 <style scoped>
 .header {
-  height: 140px;
+  height: 200px;
   padding: 50px;
-  color: #ffffff;
-  background-color: pink;
+  color: #333;
+  /* background-color: pink; */
+  background-image:url('../assets/images/0.png');
   text-align: center
 }
 .header .logo {
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
+  width: 150px;
+  height: 150px;
+  /* line-height: 50px; */
   border-radius: 50%;
-  border: 1px solid #efefef;
+  /* border: 1px solid #333; */
   margin: 0 auto;
-  color:#efefef;
+  color:#333;
   font-weight: bold;
   margin-bottom: 1em;
+  background-size: cover;
+  background-image: url('../assets/images/home_02.png')
 }
 .header .title {
   font-size: 24px;

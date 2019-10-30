@@ -6,15 +6,22 @@
     info:{{info}}
     token: {{token}}
     <div>
-      <router-link to="/manager/home">首页</router-link>
-      <router-link to="/manager/order">订单</router-link>
-      <router-link to="/manager/user">我的</router-link>
+      <van-tabbar v-model="active" @change="pageChangeHandler">
+      <van-tabbar-item name="/manager/home" icon="home-o">首页</van-tabbar-item>
+      <van-tabbar-item name="/manager/order" icon="search">订单</van-tabbar-item>
+      <van-tabbar-item name="/manager/user" icon="friends-o">我的</van-tabbar-item>
+    </van-tabbar>
     </div>
   </div>
 </template>
 <script>
 import {mapState,mapActions} from 'vuex'
 export default {
+  data(){
+    return {
+      active:0,
+    }
+  },
   created(){
     if(this.token){
       // 查询info
@@ -31,7 +38,10 @@ export default {
   methods:{
     ...mapActions('user',{
       'getInfo':'info'
-    })
+    }),
+    pageChangeHandler(path){
+      this.$router.push({path})
+    },
   }
 }
 </script>
