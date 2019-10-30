@@ -4,7 +4,7 @@ import qs from 'qs'
 // 全局配置
 // axios.defaults.headers.common["token"] = ""
 // axios.defaults.headers.post["Content-Type"] = 'application/x-www-form-urlencoded;charset=UTF-8';
-axios.defaults.baseURL = 'http://39.105.56.131:6677';
+axios.defaults.baseURL = 'http://134.175.154.93:6677';
 
 
 // Add a response interceptor
@@ -14,6 +14,11 @@ axios.interceptors.response.use(function (response) {
   response.data = data.data;
   response.status = data.status;
   response.statusText = data.message;
+  // 统一异常处理
+  if(data.status !== 200){
+    alert(data.message);
+    return Promise.reject(data.message);
+  }
   return response;
 }, function (error) {
   return Promise.reject(error);
