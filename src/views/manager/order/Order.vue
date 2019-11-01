@@ -18,7 +18,6 @@
       <van-tab title="未服务" to="/manager/order/no_ser_order"></van-tab>
       <van-tab title="待确认" to="/manager/order/waite_confirm_order"></van-tab>
     </van-tabs> -->
-     订单
     <router-view></router-view>   
   </div>
 </template>

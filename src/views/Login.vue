@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="form">
-      {{form}}
+      <!-- {{form}} -->
       <van-cell-group>
         <van-field
           v-model="form.username"
